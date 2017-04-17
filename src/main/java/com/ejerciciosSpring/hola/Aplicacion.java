@@ -13,18 +13,31 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan
 public class Aplicacion {
     @Bean
-    ServicioMansaje mockMensaje()
+    ServicioMensaje mockMensaje()
     {
-        return new ServicioMansaje() {
+        return new ServicioMensaje() {
             @Override
             public String getMensaje() {
                 return "Hola Spring";
             }
         };
     }
+    @Bean
+    ServicioSumadora mockSumadora()
+    {
+        return new ServicioSumadora() {
+            @Override
+            public int dameSuma(int digito1, int digito2) {
+                return digito1+digito2;
+            }
+        };
+    }
+
      public static void main(String arghhh[]){
-         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationContext.class);
-         ImpresoraMensaje impresora = context.getBean(ImpresoraMensaje.class);
+         ApplicationContext context = new AnnotationConfigApplicationContext(Aplicacion.class);
+         ImpresoraDatos impresora = context.getBean(ImpresoraDatos.class);
          impresora.imprimeMensaje();
+         System.out.println("Probando suma::::");
+         impresora.imprimeSuma("1",new Double(2));
      }
 }
