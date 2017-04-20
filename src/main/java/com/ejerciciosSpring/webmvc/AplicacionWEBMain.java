@@ -6,9 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Created by ccastillov on 11/04/2017.
  */
-@SpringBootApplication
+/*@SpringBootApplication*/
 public class AplicacionWEBMain {
-        public static void main(String[] args) {
+        public static void main(String[] args)
+        {
             SpringApplication.run(AplicacionWEBMain.class, args);
         }
 }

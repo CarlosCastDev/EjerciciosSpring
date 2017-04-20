@@ -12,11 +12,11 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @RestController
 public class ControladorBienvenida {
-    private static final String plantilla = "Hola, %ss!";
+    private static final String plantilla = "Hola, %s!";
     private final AtomicLong contador = new AtomicLong();
 
     @RequestMapping("/BienvenidaRESTful")
-    public Bienvenida bienvenida(@RequestParam(value = "nombre", defaultValue = "MunditoRESTful") String nombre)
+    public Bienvenida BienvenidaRESTful(@RequestParam(value = "nombre", defaultValue = "MunditoRESTful") String nombre)
     {
         return new Bienvenida(contador.incrementAndGet(), String.format(plantilla, nombre));
     }
