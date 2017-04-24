@@ -6,14 +6,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Created by ccastillov on 17/04/2017.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Bienvenida {
-    private final long id;
-    private final String content;
+public class BienvenidaREST {
+    private long id;
+    private String content;
 
-    public Bienvenida(long id, String content)
+    public BienvenidaREST()
     {
-        this.id = id;
-        this.content = content;
+
     }
 
     public long getId() {
